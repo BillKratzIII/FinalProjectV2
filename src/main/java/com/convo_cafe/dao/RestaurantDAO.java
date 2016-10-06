@@ -50,8 +50,8 @@ public class RestaurantDAO {
 			String formatStmt = searchStmt(language_id);
 			
 			try{
-				ourRestaurant.clear();
-				System.out.println("Cleared restaurant arrayList");
+				//ourRestaurant.clear();
+				//System.out.println("Cleared restaurant arrayList");
 				restaurantConnToDB();
 				STMT = CONN.createStatement();
 				RES_SET = STMT.executeQuery(formatStmt);
@@ -126,8 +126,8 @@ public class RestaurantDAO {
 		//Gather info from database
 		public static void restaurantReadFromDB() {
 			
-			ourRestaurant.clear();
-			System.out.println("Cleared restaurant arrayList");
+			//ourRestaurant.clear();
+			//System.out.println("Cleared restaurant arrayList");
 			restaurantConnToDB();
 			
 
@@ -155,7 +155,7 @@ public class RestaurantDAO {
 					
 										
 					System.out.println(restInDB.toString());
-					ourRestaurant.add(restInDB);
+					//ourRestaurant.add(restInDB);
 
 				} 
 

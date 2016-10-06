@@ -42,33 +42,35 @@ public class RestServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// put the reference to the form
-		String theName = request.getParameter("form-name");
+		//String theName = request.getParameter("rest-name");
 		
 		try{
 			//Collecting and formating language ID
 						
-			String[] theLangID = request.getParameterValues("language_id");
-			String langIDString = Arrays.toString(theLangID);
-			String langIDSubString = langIDString.substring(1, langIDString.length() - 1);
-			
-			if(!(theName.equals(null))){
+//			String[] theLangID = request.getParameterValues("language_id");
+//			String langIDString = Arrays.toString(theLangID);
+//			String langIDSubString = langIDString.substring(1, langIDString.length() - 1);
+//			
+//			if(!(theName.equals(null))){
 			
 		
 		
-		restToAddToDB.setName(request.getParameter("form-name"));//input form name for "name" and so on
-		restToAddToDB.setStreetAddress(request.getParameter("street_address"));
-		restToAddToDB.setCity(request.getParameter("city"));
-		restToAddToDB.setState(request.getParameter("state"));
-		restToAddToDB.setZip(request.getParameter("zip"));
-		restToAddToDB.setLanguageId(langIDSubString);
-		restToAddToDB.setEmail(request.getParameter("email"));
+		restToAddToDB.setName(request.getParameter("rest_name"));//input form name for "name" and so on
+		restToAddToDB.setStreetAddress(request.getParameter("rest_address"));
+		restToAddToDB.setCity(request.getParameter("rest_city"));
+		restToAddToDB.setState(request.getParameter("rest_state"));
+		restToAddToDB.setZip(request.getParameter("rest_zip"));
+		restToAddToDB.setLanguageId(request.getParameter("rest_lang"));
+		restToAddToDB.setEmail(request.getParameter("rest_email"));
+		restToAddToDB.setPassword(request.getParameter("rest_pass"));
 		
 		System.out.println("Collected a new Restaurant entry");
 		
 		RestaurantDAO.restaurantWriteToDB(restToAddToDB);
+		response.sendRedirect("restaurant page");// change to actual page name
 		
 				
-	}
+	//}
 
 		}catch(NullPointerException e){
 			boolean foundARest;
@@ -80,7 +82,7 @@ public class RestServlet extends HttpServlet {
 			foundARest = RestaurantDAO.searchForRestaurant(searchByLangId);
 			
 			if(foundARest){
-				response.sendRedirect("readtable.jsp");//put in reference to read table page
+				response.sendRedirect("FakeRest.html");//put in reference to read table page
 			}
 		}
 	}

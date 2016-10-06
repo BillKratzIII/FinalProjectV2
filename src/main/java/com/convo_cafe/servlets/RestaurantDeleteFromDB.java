@@ -15,7 +15,7 @@ import com.convo_cafe.objects.User;
 /**
  * Servlet implementation class RestaurantDeleteFromDB
  */
-@WebServlet("/restaurantDeleteFromDB")//must match jsp or html
+@WebServlet("/RestaurantDeleteFromDB")//must match jsp or html
 public class RestaurantDeleteFromDB extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,7 +39,7 @@ public class RestaurantDeleteFromDB extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Restaurant deleteFromDB = new Restaurant();
+		
 		
 //		deleteFromDB.setPlayerID(request.getParameter("Player ID"));
 		
