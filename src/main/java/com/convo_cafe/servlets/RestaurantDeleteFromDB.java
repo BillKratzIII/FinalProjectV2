@@ -41,13 +41,13 @@ public class RestaurantDeleteFromDB extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-//		deleteFromDB.setPlayerID(request.getParameter("Player ID"));
+
 		
 		int aNumber = Integer.parseInt(request.getParameter("restaurant_id"));
 		
 		RestaurantDAO.restaurantDeleteFromDB(aNumber);
 		
-		//request.getRequestDispatcher("delete.jsp").forward(request, response);
+		
 	}
 
 }

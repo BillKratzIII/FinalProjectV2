@@ -60,7 +60,6 @@ public class UserAddToDB extends HttpServlet {
 		
 		UserDAO.userWriteToDB(addTodb);
 		
-		//request.getRequestDispatcher("add.jsp").forward(request, response);
 	}
 
 }

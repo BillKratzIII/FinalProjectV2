@@ -14,7 +14,7 @@ import com.convo_cafe.objects.User;
 /**
  * Servlet implementation class DeleteFromDB
  */
-@WebServlet("/userDeleteFromDB")//must match jsp or html
+@WebServlet("/UserDeleteFromDB")//must match jsp or html
 public class UserDeleteFromDB extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,13 +39,11 @@ public class UserDeleteFromDB extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		User deleteFromDB = new User();
 		
 		int aNumber = Integer.parseInt(request.getParameter("user_id"));
 		
 		UserDAO.userDeleteFromDB(aNumber);
 		
-		//request.getRequestDispatcher("delete.jsp").forward(request, response);
 	}
 
 }

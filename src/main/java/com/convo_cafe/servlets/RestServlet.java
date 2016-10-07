@@ -41,17 +41,10 @@ public class RestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// put the reference to the form
-		//String theName = request.getParameter("rest-name");
+		
 		
 		try{
-			//Collecting and formating language ID
-						
-//			String[] theLangID = request.getParameterValues("language_id");
-//			String langIDString = Arrays.toString(theLangID);
-//			String langIDSubString = langIDString.substring(1, langIDString.length() - 1);
-//			
-//			if(!(theName.equals(null))){
+			
 			
 		
 		

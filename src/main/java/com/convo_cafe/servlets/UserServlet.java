@@ -52,15 +52,7 @@ public class UserServlet extends HttpServlet {
 			
 			if(!(theName.equals(null))){
 				
-				//Collecting and formating learning_language and Skill_level
 				
-				String[] learningLanguage = request.getParameterValues("learning_language_id");
-				String learningLanguageString = Arrays.toString(learningLanguage);
-				String learningLanguageSubString = learningLanguageString.substring(1, learningLanguageString.length() -1);
-				
-				String[] skillLevel = request.getParameterValues("skill_level");
-				String skillLevelString = Arrays.toString(skillLevel);
-				String skillLevelSubString = skillLevelString.substring(1, skillLevelString.length() - 1);
 				
 			
 		
@@ -75,8 +67,8 @@ public class UserServlet extends HttpServlet {
 				userToAddToDB.setEmail(request.getParameter("email"));
 				userToAddToDB.setPassword(request.getParameter("password"));
 				userToAddToDB.setFirstLanguageId(request.getParameter("first_language_id"));
-				userToAddToDB.setLearningLanguageId(learningLanguageSubString);
-				userToAddToDB.setSkillLevel(skillLevelSubString);
+				userToAddToDB.setLearningLanguageId(request.getParameter("learning_language_id"));
+				userToAddToDB.setSkillLevel(request.getParameter("skill_level_id"));
 		
 				System.out.println("Collected a new User entry");
 				

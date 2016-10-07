@@ -51,8 +51,8 @@ public class UserDAO {
 		String formatStmt = searchStmt(learning_language_id, skill_level_id);
 		
 		try{
-			ourUser.clear();
-			System.out.println("Cleared users arrayList");
+			//ourUser.clear();
+			//System.out.println("Cleared users arrayList");
 			userConnToDB();
 			STMT = CONN.createStatement();
 			RES_SET = STMT.executeQuery(formatStmt);
@@ -100,8 +100,8 @@ public class UserDAO {
 
 	//gather info from database
 	public static void userReadFromDB() {
-		ourUser.clear();
-		System.out.println("Cleared users arrayList");
+		//ourUser.clear();
+		//System.out.println("Cleared users arrayList");
 		userConnToDB();
 		
 
